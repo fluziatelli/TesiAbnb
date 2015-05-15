@@ -1,0 +1,49 @@
+<!-- <div ng-include="'components/navbar/navbar.html'"></div>-->
+<header class="hero-unit" id="banner">
+  <div class="container">
+    <h1>'Allo, 'Allo!</h1>
+    <p class="lead">New Airbnb Scraper is Coming...</p>
+    <img src="https://a2.muscache.com/airbnb/static/logos/belo-200x200-4d851c5b28f61931bf1df28dd15e60ef.png" alt="Rumba Rumba">
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+
+  <form class="thing-form">
+    <label>Syncs in realtime across clients</label>
+    <p class="input-group">
+      <input type="text" class="form-control" placeholder="Add a new city here." ng-model="city">
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-primary" ng-click="searchCity()">Search</button>
+      </span>
+    </p>
+  </form>
+  <div class="gridStyle" ng-grid="myOptions" ng-if="mostraResult"></div>
+</div>
+
+    </div>
+</div>
+<div class="row">
+  <div class="col-lg-12">
+<ui-gmap-google-map center='map.center' zoom='map.zoom' ng-if="mostraResult">
+    <markers models="gmap" coords="geo" idkey="id"></markers>
+</ui-gmap-google-map>
+    </div>
+</div>
+<footer class="footer">
+  <div class="container">
+      <p>
+        <a href="https://twitter.com/tyhenkel">@tyhenkel</a> |
+         <a href="https://github.com/DaftMonk/generator-angular-fullstack/issues?state=open">Issues</a></p>
+  </div>
+</footer>
+<style>
+/*style.css*/
+.gridStyle {
+    border: 1px solid rgb(212,212,212);
+    width: 100%;
+    height: 150px;
+}
+</style>
